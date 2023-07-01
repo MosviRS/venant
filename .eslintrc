@@ -1,0 +1,11 @@
+{
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "eslint-plugin-html"
+  ],
+  "extends": ["eslint-config-codely"]
+}
