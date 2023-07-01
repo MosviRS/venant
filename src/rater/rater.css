@@ -1,0 +1,14 @@
+.point{
+    cursor: pointer;
+}
+.point:hover{
+    animation: snake 0.2s ease-in-out forwards;
+}
+@keyframes snake {
+    from{
+        transform: scale(0.8);
+    }
+    to{
+        transform: scale(1);
+    }
+}

@@ -1,14 +1,7 @@
 import "./assets/css/normalize.css";
+import "./assets/css/styles.css";
+import {render as renderRater} from "./rater/index.js";
+renderRater();
 
-import { getUsers } from "./users";
 
-export async function printUsers() {
-	const users = await getUsers();
-	const element = document.createElement("div");
-	element.innerHTML = `<h2>Current users</h2>
-    ${users.map((user) => `<div>${user.name}</div>`).join("")}`;
 
-	return element;
-}
-
-printUsers().then((element) => document.body.appendChild(element));
