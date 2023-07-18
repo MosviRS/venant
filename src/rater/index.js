@@ -5,7 +5,7 @@ export function render(){
     document.addEventListener("DOMContentLoaded", () => {
         const raters = document.querySelectorAll("[role=rater]");
         raters.forEach((rater) => {
-            new Rater(rater);
+            new Rater(rater).init();
         });
     });
 }

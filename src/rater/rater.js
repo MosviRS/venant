@@ -42,9 +42,11 @@ export function Rater(rater){
         element.style.color = "gray";
         element.style.opacity = "0.5";
     }
-    resetRater();
-    setMouseHover();
-    setMouseLeave();
-    setClick();
-    
+    this.init = () =>{
+        resetRater();
+        setMouseHover();
+        setMouseLeave();
+        setClick();
+    } 
+
 }
