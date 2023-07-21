@@ -34,15 +34,25 @@ export function Calendar(calendar){
             day.classList.add(normal);
             if (isToday(indexToDate)) day.classList.add(active);
             daysBoard.appendChild(day);
+            setEvents(day,eventSelectDay);
         }
-    }
-      
-    function printInactiveMonths(start,end){
+    }      
+    function printInactiveAfterMonths(start,end){
         for (let i = start; i < end; i++) {
             const day = document.createElement("li");
             day.innerHTML = i;
             day.classList.add(inactive);
             daysBoard.appendChild(day);
+            setEvents(day,eventNextMonth);
+        }
+    }         
+    function printInactivePrevMonths(start,end){
+        for (let i = start; i < end; i++) {
+            const day = document.createElement("li");
+            day.innerHTML = i;
+            day.classList.add(inactive);
+            daysBoard.appendChild(day);
+            setEvents(day,eventPrevMonth);
         }
     }
     function setMonthLabel(month){
@@ -51,12 +61,12 @@ export function Calendar(calendar){
     function loadDaysOfMonth(){
         const month = currentDate.getMonth();
         const year = currentDate.getFullYear();
-        printInactiveMonths(lastDateOfLastMonth(month,year) - (firstDayOfMonth(month,year) - 1),
+        printInactivePrevMonths(lastDateOfLastMonth(month,year) - (firstDayOfMonth(month,year) - 1),
                             lastDateOfLastMonth(month,year) + 1,inactive);
         printCurrentMonth(1,daysInMonth(month,year) + 1,normal);
-        printInactiveMonths(1,(6 - lastDayOfMonth(month,year)) +1 ,inactive);
+        printInactiveAfterMonths(1,(6 - lastDayOfMonth(month,year)) +1 ,inactive);
     }
-    function setMonthsButton(element,callback){
+    function setEvents(element,callback){
         element.addEventListener("click",callback);
     }
     function eventPrevMonth(){
@@ -67,6 +77,15 @@ export function Calendar(calendar){
         currentDate = new Date(currentDate.getFullYear(),currentDate.getMonth() + 1);
         buildBoard();
     }
+    
+    function eventSelectDay(e){
+        const days = document.querySelectorAll(".days li");
+        days.forEach(day => {
+            day.classList.remove(active);
+        });
+        e.target.classList.add(active);
+    }
+
     function cleanBoard(){
         daysBoard.innerHTML = "";
     }
@@ -77,7 +96,7 @@ export function Calendar(calendar){
     };
     this.init = () => { 
         buildBoard();
-        setMonthsButton(prevMonthBtn,eventPrevMonth);
-        setMonthsButton(nextMonthBtn,eventNextMonth);
+        setEvents(prevMonthBtn,eventPrevMonth);
+        setEvents(nextMonthBtn,eventNextMonth);
     }     
 }

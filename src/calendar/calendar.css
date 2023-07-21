@@ -50,6 +50,7 @@ header .icons span:hover{
     justify-content: center; 
     text-align:center; 
     align-items: center;
+    user-select: none;
 }
 .days li{
     position: relative;
@@ -60,6 +61,7 @@ header .icons span:hover{
     justify-content: center;
     align-items: center;
     z-index: 1;
+    user-select: none;
 }
 .days li::before{
     position: absolute;
