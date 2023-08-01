@@ -1,3 +1,4 @@
+import { setValue } from "../utils/build";
 export function Rater(rater){
     const element = rater;
     const items = rater.querySelectorAll(".point");
@@ -9,6 +10,7 @@ export function Rater(rater){
     function setRating(e){
         const currentRating = e.target.getAttribute("data-value");
         element.setAttribute("data-rating",currentRating);
+        setValue(element,currentRating);
     }
     function resetRater(){
         const currentRating = element.getAttribute("data-rating");
@@ -35,12 +37,12 @@ export function Rater(rater){
         });
     }
     function highlighItems(element){
-        element.style.color = "yellow";
-        element.style.opacity = "1";
+        element.classList.remove("inactive");
+        element.classList.add("active");
     }
     function unhigHlightItems(element){
-        element.style.color = "gray";
-        element.style.opacity = "0.5";
+        element.classList.remove("active");
+        element.classList.add("inactive");
     }
     this.init = () =>{
         resetRater();

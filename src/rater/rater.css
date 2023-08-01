@@ -1,6 +1,14 @@
 .rater {
     user-select: none;
 }
+.active {
+    opacity: 1;
+    color: var(--primary-color);
+}
+.inactive {
+    opacity: 0.5;
+    color: var(--secondary-color);
+}
 .point{
     cursor: pointer;
     transition: all 0.2s ease-in-out;

@@ -1,6 +1,6 @@
 .calendar{
     width: 300px;
-    background-color: rgb(217, 217, 217);
+    background-color: var(--bg-color);
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
@@ -17,7 +17,7 @@ header .arrows span{
   height: 38px;
   width: 38px;
   margin: 0 1px;
-  color: #878787;
+  color: var(--secondary-color);
   text-align: center;
   line-height: 38px;
   font-size: 1.9rem;
@@ -25,7 +25,7 @@ header .arrows span{
   border-radius: 50%;
 }
 header .icons span:hover{
-    background: #f2f2f2;
+    background: var(--bg-color);
 }
 .board{
     padding: 10px 15px;
@@ -75,17 +75,17 @@ header .icons span:hover{
     transform: translate(-50%, -50%);
 }
 .days li:not(.active):hover::before{
-    background: #f2f2f2;
-    border: 1px solid #ffa375;
+    background: var(--secondary-bg-color);
+    border: 1px solid var(--primary-color);
 }
 .days li.inactive{
-    color: #aaa;
+    color: var(--font-secondary-color);
 }
 .days li.normal{
-    color: black;
+    color: var(--font-color);
 }
 .days li.active::before{
-    background: linear-gradient(#fe667d, #ffa375);
+    background: linear-gradient(var(--primary-color), var(--secondary-color));
 }
 .days li.active{
     color: white;
