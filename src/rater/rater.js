@@ -37,12 +37,12 @@ export function Rater(rater){
         });
     }
     function highlighItems(element){
-        element.classList.remove("inactive");
-        element.classList.add("active");
+        element.classList.remove("rater__point--inactive");
+        element.classList.add("rater__point--active");
     }
     function unhigHlightItems(element){
-        element.classList.remove("active");
-        element.classList.add("inactive");
+        element.classList.remove("rater__point--active");
+        element.classList.add("rater__point--inactive");
     }
     this.init = () =>{
         resetRater();

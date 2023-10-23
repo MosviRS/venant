@@ -1,11 +1,11 @@
 .rater {
     user-select: none;
 }
-.active {
+.rater__point--active {
     opacity: 1;
     color: var(--primary-color);
 }
-.inactive {
+.rater__point--inactive {
     opacity: 0.5;
     color: var(--secondary-color);
 }

@@ -1,0 +1,63 @@
+.switch{
+    position: relative;
+    width: fit-content;
+    box-sizing: border-box;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.switch__box {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    margin-right: 8px;
+    border: 1px solid var(--secondary-color);
+    box-sizing: border-box;
+    padding: 3px;
+
+}
+
+.switch__button{
+    position: relative;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    cursor: pointer;
+    -moz-box-shadow: 0 3px 5px #ccc;
+    -webkit-box-shadow: 0 3px 5px #ccc;
+    -o-box-shadow: 0 3px 5px #ccc;
+    -ms-box-shadow: 0 3px 5px #ccc;
+    box-shadow: 0 3px 5px #ccc;
+    transition: all 0.3s ease;
+}
+
+
+.switch__label{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.switch__box--inactive{
+    background-color: var(--secondary-bg-color);
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.switch__box--active{
+    background: linear-gradient(var(--primary-color), var(--secondary-color));
+}
+
+.switch__button--inactive{
+ left: 0;
+}
+
+.switch__button--active{
+ left: calc(100% - 22px);
+ box-shadow: none;
+}
