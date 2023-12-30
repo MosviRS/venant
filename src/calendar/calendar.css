@@ -44,6 +44,9 @@ header .icons span:hover{
     justify-content: space-between;
     padding: 0px;
 }
+.current-month{
+    color: var(--font-color);
+}
 .week li{
     flex: 1 0 10%;
     display: flex; 
@@ -51,6 +54,7 @@ header .icons span:hover{
     text-align:center; 
     align-items: center;
     user-select: none;
+    color: var(--font-color);
 }
 .days li{
     position: relative;

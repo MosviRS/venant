@@ -1,6 +1,6 @@
 
 
-import { setValue,getValue } from "../utils/build";
+import { setValue } from "../utils/build";
 export function Switch(switcher){
     const element = switcher;
     const box = element.querySelector(".switch__box");
@@ -44,18 +44,26 @@ export function Switch(switcher){
         highligh();
         setValue(element,"on");
         setChecked(true);
+        setCustomOnchangeEvent(true);
     }
 
     function disable(){
         unhigHlight();
         setValue(element,"off");
         setChecked(false);
+        setCustomOnchangeEvent(false);
     }
 
     function reset(){
+        if (getChecked() === "true") return enable();
         disable();
     }
-  
+
+    function setCustomOnchangeEvent(checked){
+        const switchChangeEvent = new CustomEvent("switchChange", { detail: { checked } });
+        element.dispatchEvent(switchChangeEvent);
+    }
+
     this.init = () =>{
         reset();
         setEventChangeStatus();
